@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiTienda – Checkout</title>
+
+    <!-- Fuente Profesional -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            background: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            background: #1E8934;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .navbar nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .navbar nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* ===== CONTENEDOR PRINCIPAL ===== */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        /* ===== FORMULARIO ===== */
+        .checkout-form {
+            flex: 2;
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            color: #1E8934;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 25px;
+            color: #1E8934;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 2px solid #dcdcdc;
+            font-size: 15px;
+        }
+
+        .input-group input:focus {
+            border-color: #1E8934;
+            outline: none;
+        }
+
+        /* ===== RESUMEN DEL PEDIDO ===== */
+        .summary {
+            flex: 1;
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+            height: fit-content;
+        }
+
+        .summary h3 {
+            color: #1E8934;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .total {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1E8934;
+            margin-top: 15px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+
+        .btn-final {
+            width: 100%;
+            padding: 14px;
+            background: #1E8934;
+            color: white;
+            font-weight: 600;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 17px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: 0.25s;
+        }
+
+        .btn-final:hover {
+            background: #166e29;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #1E8934;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 80px;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">MiTienda</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="carrito.html">🛒 Carrito</a>
+            <a href="login.html">Iniciar Sesión</a>
+            <a href="registro.html">Registrarse</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO -->
+    <div class="container">
+
+        <!-- FORMULARIO CHECKOUT -->
+        <div class="checkout-form">
+
+            <h2>Finalizar compra</h2>
+
+            <!-- DATOS PERSONALES -->
+            <div class="section-title">Datos del cliente</div>
+
+            <div class="input-group">
+                <label>Nombre completo</label>
+                <input type="text" placeholder="Ingresa tu nombre" required>
+            </div>
+
+            <div class="input-group">
+                <label>Correo electrónico</label>
+                <input type="email" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="input-group">
+                <label>Teléfono</label>
+                <input type="tel" placeholder="55 1234 5678" required>
+            </div>
+
+            <!-- DIRECCIÓN -->
+            <div class="section-title">Dirección de envío</div>
+
+            <div class="input-group">
+                <label>Calle y número</label>
+                <input type="text" placeholder="Calle #123" required>
+            </div>
+
+            <div class="input-group">
+                <label>Colonia</label>
+                <input type="text" placeholder="Ej: Centro" required>
+            </div>
+
+            <div class="input-group">
+                <label>Ciudad</label>
+                <input type="text" placeholder="CDMX" required>
+            </div>
+
+            <div class="input-group">
+                <label>Código postal</label>
+                <input type="text" placeholder="00000" required>
+            </div>
+
+            <!-- METODO DE PAGO -->
+            <div class="section-title">Método de pago</div>
+
+            <div class="input-group">
+                <label>Selecciona un método</label>
+                <select>
+                    <option>Tarjeta de crédito / débito</option>
+                    <option>Paypal</option>
+                    <option>Transferencia bancaria</option>
+                    <option>Pago contra entrega</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!-- RESUMEN DEL PEDIDO -->
+        <div class="summary">
+            <h3>Resumen del pedido</h3>
+
+            <div class="summary-item">
+                <span>Producto A</span>
+                <span>$499</span>
+            </div>
+
+            <div class="summary-item">
+                <span>Producto B</span>
+                <span>$299</span>
+            </div>
+
+            <div class="summary-item">
+                <span>Envío</span>
+                <span>$99</span>
+            </div>
+
+            <div class="total">
+                Total: $897 MXN
+            </div>
+
+            <a href="#" class="btn-final">Confirmar compra</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        © 2025 MiTienda – Todos los derechos reservados
+    </footer>
+
+</body>
+</html>
