@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo - MiTienda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background: #1E8934;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .navbar nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+            .navbar nav a {
+                color: white;
+                text-decoration: none;
+                padding: 7px 12px;
+                border-radius: 4px;
+            }
+
+                .navbar nav a:hover {
+                    background: #166e29;
+                }
+
+        /* BOTÓN HAMBURGUESA */
+        .menu-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            padding: 10px;
+        }
+
+            .menu-btn span {
+                display: block;
+                width: 22px;
+                height: 3px;
+                background: white;
+                border-radius: 2px;
+            }
+
+        /* SIDEBAR */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background: #f9f9f9;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+            transition: left 0.3s ease;
+            z-index: 999;
+            padding: 20px;
+        }
+
+            .sidebar.open {
+                left: 0;
+            }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .sidebar-content h4 {
+            color: #1E8934;
+            margin-top: 20px;
+        }
+
+        .sidebar-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar-content li {
+            padding: 6px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        /* GRID PRODUCTOS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 40px;
+        }
+
+        .product-card {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: 0.2s ease;
+        }
+
+            .product-card:hover {
+                transform: scale(1.04);
+            }
+
+            .product-card img {
+                width: 100%;
+                height: 150px;
+                object-fit: contain;
+            }
+
+        .btn {
+            padding: 10px 18px;
+            background: #1E8934;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+            .btn:hover {
+                background: #166e29;
+            }
+
+        /* FOOTER */
+        .footer {
+            background: #1E8934;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="navbar-left">
+            <!-- BOTÓN HAMBURGUESA -->
+            <button onclick="toggleSidebar()" class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="logo-text">MiTienda</div>
+        </div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="carrito.html">Carrito</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- SIDEBAR -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span>👋 Hola, Usuario</span>
+            <button onclick="toggleSidebar()" class="close-btn">✖</button>
+        </div>
+
+        <div class="sidebar-content">
+            <h4>Tendencia</h4>
+            <ul>
+                <li>Nuevo</li>
+                <li>Lo más vendido</li>
+                <li>Descuentos</li>
+            </ul>
+
+            <h4>Categorías</h4>
+            <ul>
+                <li>Alimentos y bebidas</li>
+                <li>Automotriz y Motocicletas</li>
+                <li>Belleza y cuidado personal</li>
+                <li>Mascotas y accesorios</li>
+                <li>Juegos & juguetes</li>
+                <li>Hogar inteligente</li>
+                <li>Electrónicos</li>
+                <li>Videojuegos</li>
+                <li>Moda</li>
+                <li>Deportes</li>
+                <li>Salud</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PRODUCTOS -->
+    <div class="products">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150">
+            <h4>Silla ergonómica</h4>
+            <p>$1,199</p>
+            <a class="btn" href="producto.html">Ver producto</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150">
+            <h4>Playera negra básica</h4>
+            <p>$199</p>
+            <a class="btn" href="producto.html">Ver producto</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150">
+            <h4>PS5 Control</h4>
+            <p>$1,699</p>
+            <a class="btn" href="producto.html">Ver producto</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150">
+            <h4>Laptop Lenovo</h4>
+            <p>$9,999</p>
+            <a class="btn" href="producto.html">Ver producto</a>
+        </div>
+    </div>
+
+    <footer class="footer">© 2025 MiTienda - Sistema de Ventas</footer>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
+
