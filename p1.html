@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 50%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        form { margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; width: 300px;}
+        input { display: block; margin-bottom: 10px; width: 90%; padding: 5px;}
+    </style>
+</head>
+<body>
+
+    <h2>Ingresar Datos</h2>
+    <form action="" method="POST">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required>
+        
+        <label>Apellido Paterno:</label>
+        <input type="text" name="ap_paterno" required>
+        
+        <label>Apellido Materno:</label>
+        <input type="text" name="ap_materno" required>
+        
+        <input type="submit" name="enviar" value="Guardar Datos">
+    </form>
+
+    <hr>
+
+    <!-- TABLA DE RESULTADOS -->
+    <h2>Lista de Personas</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+        </tr>
+
+        <?php
+        
+        $sql = "SELECT * FROM personas";
+        $resultado = $conn->query($sql);
+
+        if ($resultado->num_rows > 0) {
+            
+            while($fila = $resultado->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $fila['id'] . "</td>";
+                echo "<td>" . $fila['nombre'] . "</td>";
+                echo "<td>" . $fila['apellido_paterno'] . "</td>";
+                echo "<td>" . $fila['apellido_materno'] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'>No hay registros aún</td></tr>";
+        }
+        ?>
+    </table>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio - MiTienda</title>
+
+    <!-- Fuente chida -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ======== ESTILOS GENERALES ======== */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #333;
+        }
+
+        /* ======== NAVBAR ======== */
+        .navbar {
+            background: #1E8934; /* verde chingón */
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .navbar nav a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+            font-weight: 400;
+            padding: 7px 12px;
+            border-radius: 4px;
+            transition: 0.2s ease;
+        }
+
+        .navbar nav a:hover {
+            background: #166e29;
+        }
+
+        /* ======== HERO ======== */
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            color: #1F1F1F;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* ======== BOTONES ======== */
+        .btn {
+            background: #1E8934;
+            color: white;
+            padding: 12px 22px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.2s ease;
+            box-shadow: 0 4px 10px rgba(30,137,52,0.3);
+        }
+
+        .btn:hover {
+            background: #166e29;
+        }
+
+        /* ======== FOOTER ======== */
+        .footer {
+            background: #1E8934;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">MiTienda</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="carrito.html">Carrito</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Bienvenido a MiTienda</h1>
+        <p>La mejor experiencia en compras online y físicas.</p>
+        <a class="btn" href="catalogo.html">Ver productos</a><br>
+        <a class="btn" href="login.html">Iniciar sesión</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        © 2025 MiTienda - Sistema de Ventas
+    </footer>
+
+</body>
+</html>
